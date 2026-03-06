@@ -4,8 +4,30 @@
 ![Transformers](https://img.shields.io/badge/Transformers-4.36-orange)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.29-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
+[![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/mohhhhhit/nonoql)
 
 NoNoQL is an NLP-based system that converts natural language queries into SQL and MongoDB statements for CRUD operations. Built using T5 transformer models and trained on synthetic industry data.
+
+## 🤗 Pretrained Model
+
+**The trained model is available on Hugging Face: [mohhhhhit/nonoql](https://huggingface.co/mohhhhhit/nonoql)**
+
+You can use it directly without training:
+
+```python
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+# Load pretrained model from HuggingFace
+tokenizer = AutoTokenizer.from_pretrained("mohhhhhit/nonoql")
+model = AutoModelForSeq2SeqLM.from_pretrained("mohhhhhit/nonoql")
+
+# Generate SQL query
+input_text = "translate to sql: Find employees where salary is greater than 50000"
+inputs = tokenizer(input_text, return_tensors="pt")
+outputs = model.generate(**inputs, max_length=512, num_beams=10)
+query = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(query)  # SELECT * FROM employees WHERE salary > 50000;
+```
 
 ## ⚡ Quick Commands
 
@@ -360,13 +382,21 @@ Contributions are welcome! Areas for improvement:
 4. **Schema Learning**: Automatic schema extraction
 5. **Error Handling**: Query validation and correction
 
+## � Links
+
+- **🤗 HuggingFace Model**: [mohhhhhit/nonoql](https://huggingface.co/mohhhhhit/nonoql)
+- **📖 Model Card**: [MODEL_CARD.md](MODEL_CARD.md)
+- **🚀 Quick Start**: [QUICKSTART.md](QUICKSTART.md)
+- **💻 Local Setup**: [LOCAL_SETUP.md](LOCAL_SETUP.md)
+- **🎓 Training Guide**: [LOCAL_TRAINING.md](LOCAL_TRAINING.md)
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👨‍💻 Author
 
-Created for NLP course project - Text to SQL/MongoDB Query Generation
+**Mohit Panchal** - [GitHub](https://github.com/mohhhit) | [HuggingFace](https://huggingface.co/mohhhhhit)
 
 ## 🙏 Acknowledgments
 
