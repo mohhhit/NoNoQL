@@ -1,0 +1,25 @@
+# Requirements for the TexQL Project
+
+# Data Generation
+pandas==2.1.4
+numpy==1.26.2
+faker==22.0.0
+
+# Model Training (Google Colab)
+transformers==4.36.2
+torch==2.1.2
+datasets==2.16.1
+accelerate==0.25.0
+sentencepiece==0.1.99
+protobuf==4.25.1
+wandb==0.16.2
+
+# Frontend Application
+streamlit==1.29.0
+pymongo==4.6.1
+sqlalchemy==2.0.25
+
+# Utilities
+tqdm==4.66.1
+python-dotenv==1.0.0
+psutil==5.9.6

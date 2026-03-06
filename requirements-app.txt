@@ -1,0 +1,20 @@
+# Minimal Requirements for Running TexQL App (CPU-only)
+# Use this for app.py, demo.py, and data_generation.py
+
+# Core Dependencies
+torch>=2.0.0  # CPU version
+transformers>=4.36.0
+streamlit>=1.29.0
+
+# Data Generation
+pandas>=2.1.0
+numpy>=1.26.0
+faker>=22.0.0
+
+# Utilities
+tqdm>=4.66.0
+python-dotenv>=1.0.0
+
+# Optional (if you want to use databases)
+# pymongo>=4.6.0
+# sqlalchemy>=2.0.0

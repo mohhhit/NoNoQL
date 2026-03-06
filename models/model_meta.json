@@ -1,0 +1,21 @@
+{
+  "model_name": "t5-small",
+  "languages": [
+    "SQL",
+    "MongoDB"
+  ],
+  "operations": [
+    "create",
+    "read",
+    "update",
+    "delete",
+    "join",
+    "alter",
+    "drop",
+    "view",
+    "use"
+  ],
+  "max_input_len": 96,
+  "max_output_len": 192,
+  "prompt_format": "translate English to {language} {operation}: {nl_query}"
+}
